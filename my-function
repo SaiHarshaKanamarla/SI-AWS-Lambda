@@ -1,0 +1,16 @@
+import json
+
+def lambda_handler(event, context):
+    # TODO implement
+    message = event["params"]["querystring"]["keyword"]
+    msg = 'Sai Harsha says '+message
+    return {
+        'statusCode': 200,
+        'body': json.dumps(msg)
+    }
+
+This is a simple python code that is runs in the lambda function. Once the API gateway is created in the AWS console, we link the API
+action to this lambda_handler. 
+
+The event parameter handles the response of the API. keyword is the query param that is used for modifying the message
+we get for the response.
